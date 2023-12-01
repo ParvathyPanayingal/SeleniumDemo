@@ -1,0 +1,2 @@
+2023-12-01 09:35:47.061 +05:30 [INF] Navigated to AJIO Career page 
+2023-12-01 09:36:08.084 +05:30 [INF] Navigated to Registration form page 

@@ -1,0 +1,6 @@
+2023-11-29 17:09:02.049 +05:30 [INF] Buy Product Test Started
+2023-11-29 17:09:02.266 +05:30 [INF] Search box Link Clicked
+2023-11-29 17:09:17.968 +05:30 [INF] Test passed for Sandals Results Page
+2023-11-29 17:09:28.645 +05:30 [INF] Test passed for Products Details Page
+2023-11-29 17:09:40.342 +05:30 [INF] Test passed for Cart Page
+2023-11-29 17:09:56.944 +05:30 [INF] Test passed for Buy Product Test

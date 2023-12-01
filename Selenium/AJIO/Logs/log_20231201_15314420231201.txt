@@ -1,0 +1,2 @@
+2023-12-01 15:31:49.796 +05:30 [INF] Page displays return and refund policy
+2023-12-01 15:31:49.809 +05:30 [INF] Test passed for Return and refund policy
