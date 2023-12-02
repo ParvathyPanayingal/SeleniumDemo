@@ -1,4 +1,5 @@
 ﻿using OpenQA.Selenium;
+using OpenQA.Selenium.Support.UI;
 using SeleniumExtras.PageObjects;
 using System;
 using System.Collections.Generic;
@@ -11,10 +12,22 @@ namespace AJIO.PageObjects
     internal class CartPage
     {
         IWebDriver driver;
+
+        private DefaultWait<IWebDriver> fluentWait()
+        {
+            DefaultWait<IWebDriver> fluentWait = new DefaultWait<IWebDriver>(driver);
+            fluentWait.Timeout = TimeSpan.FromSeconds(5);
+            fluentWait.PollingInterval = TimeSpan.FromMilliseconds(50);
+            fluentWait.IgnoreExceptionTypes(typeof(NoSuchElementException));
+            fluentWait.Message = "Element not found.";
+            return fluentWait;
+        }
+
         public CartPage(IWebDriver? driver)
         {
             this.driver = driver ?? throw new ArgumentNullException(nameof(driver));
             PageFactory.InitElements(driver, this);
+
         }
 
         
@@ -54,7 +67,8 @@ namespace AJIO.PageObjects
 
         public void SelectCoupon()
         {
-            CouponCode?.Click();
+           //fluentWait().Until(d => (CouponCode?.Displayed));
+           CouponCode?.Click();
         }
 
         public void ApplyCouponButtonClick()
@@ -64,6 +78,7 @@ namespace AJIO.PageObjects
 
         public void ClickProceedToBuy()
         {
+            //fluentWait().Until(d => (ProceedToBuy?.Displayed));
             ProceedToBuy?.Click();
         }
     }

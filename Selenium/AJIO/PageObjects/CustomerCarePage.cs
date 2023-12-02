@@ -26,13 +26,13 @@ namespace AJIO.PageObjects
 
         public void ClickSearchInput(string searchQuery)
         {
-            SearchInputBox.SendKeys(searchQuery);
-            SearchInputBox.SendKeys(Keys.Enter);
+            SearchInputBox?.SendKeys(searchQuery);
+            SearchInputBox?.SendKeys(Keys.Enter);
         }
 
         public void SelectQuestion()
         {
-            Question.Click();
+            Question?.Click();
         }
     }
 }

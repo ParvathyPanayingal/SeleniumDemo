@@ -20,7 +20,7 @@ namespace AJIO.PageObjects
         [FindsBy(How = How.XPath, Using = "(//div[@role='button'])/span[1]")]
         private IWebElement? SelectSize { get; set; }
 
-        [FindsBy(How = How.ClassName, Using = "btn-gold\r\n")]
+        [FindsBy(How = How.ClassName, Using = "btn-gold")]
         private IWebElement? AddToCartButton { get; set; }
 
         [FindsBy(How = How.XPath, Using = "//a[@href=\"/cart\"]")]

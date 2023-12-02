@@ -28,9 +28,6 @@ namespace AJIO.PageObjects
 
         public void ClickApplyButton()
         {
-            //((IJavaScriptExecutor)driver).ExecuteScript("arguments[0].click()", ApplyButton);
-            //CoreCodes.ScrollIntoView(driver, ApplyButton);
-            //driver.Manage().Window.Size = new System.Drawing.Size(1296, 696);
             
             ApplyButton?.Click();
         }

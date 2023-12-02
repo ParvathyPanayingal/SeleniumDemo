@@ -1,3 +1,0 @@
-2023-12-01 17:36:12.310 +05:30 [INF] Buy Product Test Started
-2023-12-01 17:36:17.203 +05:30 [INF] Searched for sandals
-2023-12-01 17:36:22.045 +05:30 [INF] Product clicked

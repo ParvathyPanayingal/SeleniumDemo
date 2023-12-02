@@ -29,6 +29,12 @@ namespace AJIO.Testscripts
             .WriteTo.File(logfilepath, rollingInterval: RollingInterval.Day)
             .CreateLogger();
 
+            if (!driver.Url.Equals("https://www.ajio.com/"))
+            {
+                driver.Navigate().GoToUrl("https://www.ajio.com/");
+
+            }
+
             var ajioHomePage = new AjioHomePage(driver);
             ajioHomePage.ClickJoinOurTeam();
             TakeScreenShot();
@@ -44,17 +50,15 @@ namespace AJIO.Testscripts
 
             var ajioCareersPage= new AjioCareersPage(driver);
             ajioCareersPage.ClickExploreCareers();
-            Thread.Sleep(3000);
-
-         
-
+            //Thread.Sleep(3000);
+       
             List<string> nextwindow = driver.WindowHandles.ToList();
             driver.SwitchTo().Window(nextwindow[1]);
 
             var reliancePage=new ReliancePage(driver);
             reliancePage.ClickViewDetails();
 
-            Thread.Sleep(3000);
+            //Thread.Sleep(3000);
 
             List<string> nexwindow = driver.WindowHandles.ToList();
             driver.SwitchTo().Window(nexwindow[2]);
@@ -62,12 +66,12 @@ namespace AJIO.Testscripts
             var jobDescriptionPage = new JobDescriptionPage(driver);
             jobDescriptionPage.ClickApplyButton();
 
-            Thread.Sleep(2000);
+            //Thread.Sleep(2000);
 
 
 
             jobDescriptionPage.ClickNewUserButton();
-            Thread.Sleep(3000);
+            //Thread.Sleep(3000);
             TakeScreenShot();
             Log.Information("Navigated to Registration form page ");
 
@@ -99,15 +103,13 @@ namespace AJIO.Testscripts
                 registrationPage.EnterPassword(password);
                 //Thread.Sleep(2000);
                 registrationPage.EnterConfirmPassword(conPassword);
-               // Thread.Sleep(2000);
+                //Thread.Sleep(2000);
                 registrationPage.EnterFirstName(firstName);
                 //Thread.Sleep(2000);
                 registrationPage.EnterLastName(lastName);
                 //Thread.Sleep(2000);
                 registrationPage.SelectDateOfBirth(date);
                 //Thread.Sleep(2000);
-
-
                 registrationPage.ClickGenderArrow();
                 registrationPage.SelectFemale();
                 //Thread.Sleep(2000);
@@ -118,7 +120,7 @@ namespace AJIO.Testscripts
                 registrationPage.SelectState();
                 //Thread.Sleep(2000);
                 registrationPage.EnterCity(city);
-               // Thread.Sleep(2000);
+                //Thread.Sleep(2000);
                 registrationPage.EnterMobileNumber(mobileNo);
                 //Thread.Sleep(2000);
                 registrationPage.SelectEducationLevelArrow();
@@ -128,7 +130,7 @@ namespace AJIO.Testscripts
                 registrationPage.SelectEducationEstablishment();
                 //Thread.Sleep(2000);
                 registrationPage.SelectCourseArrow();
-               //Thread.Sleep(2000);
+                //Thread.Sleep(2000);
                 registrationPage.SelectCourse();
                 //Thread.Sleep(2000);
                 registrationPage.SelectInstitutionArrow();
@@ -143,10 +145,10 @@ namespace AJIO.Testscripts
                 registrationPage.SelectBrowse(filePath);
                 //Thread.Sleep(5000);
                 registrationPage.ClickRegisterButton();
-                Thread.Sleep(2000);
+                //Thread.Sleep(2000);
                 
                 IWebElement modalconfirm = driver.FindElement(By.XPath("//span[contains(text(),'Are')]"));
-                //TakeScreenShot();
+                TakeScreenShot();
                 try
                 {
 

@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 
 namespace AJIO.TestScripts
 {
-    [TestFixture]
+    [TestFixture,Order(1)]
     internal class BuyProductTests : CoreCodes
     {
 
@@ -29,6 +29,12 @@ namespace AJIO.TestScripts
             .WriteTo.Console()
             .WriteTo.File(logfilepath, rollingInterval: RollingInterval.Day)
             .CreateLogger();
+
+            if (!driver.Url.Equals("https://www.ajio.com/"))
+            {
+                driver.Navigate().GoToUrl("https://www.ajio.com/");
+
+            }
 
             AjioHomePage ajioHomePage = new(driver);
             Log.Information("Buy Product Test Started");
@@ -52,28 +58,23 @@ namespace AJIO.TestScripts
                 sandalsResultsPage.ClickWomenFilter();
                 //Thread.Sleep(3000);
                 sandalsResultsPage.ClickWomenFlatsFilter();
-                //Thread.Sleep(2000);
-                
-
+                Thread.Sleep(3000);
                 sandalsResultsPage.ProductClick();
-               //Thread.Sleep(2000);
+                //Thread.Sleep(2000);
                 TakeScreenShot();
                 Log.Information("Product clicked");
-
-                
-
+             
                 List<string> nextwindow = driver.WindowHandles.ToList();
                 driver.SwitchTo().Window(nextwindow[1]);
-
 
                 var productDetailsPage = new ProductDetailsPage(driver);
                 productDetailsPage.ClickSelectSize();
                 //Thread.Sleep(2000);
                 productDetailsPage.ClickAddToCartButton();
 
-                Thread.Sleep(5000);
+                //Thread.Sleep(5000);
                 productDetailsPage.ClickCartIcon();
-               //Thread.Sleep(3000);
+                //Thread.Sleep(3000);
 
                 var cartPage=new CartPage(driver);
 
@@ -81,11 +82,11 @@ namespace AJIO.TestScripts
                 cartPage.ClickIncQuantityButton();
                 //Thread.Sleep(2000);
                 cartPage.ClickUpdateButton();
-                Thread.Sleep(3000);
+                //Thread.Sleep(3000);
                 cartPage.SelectCoupon();
                 //Thread.Sleep(5000);
                 cartPage.ApplyCouponButtonClick();
-                Thread.Sleep(2000);
+                //Thread.Sleep(2000);
                 cartPage.ClickProceedToBuy();
                 //Thread.Sleep(5000);
                 TakeScreenShot();

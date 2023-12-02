@@ -1,2 +1,0 @@
-2023-12-01 14:20:30.766 +05:30 [INF] SignUp modal displayed
-2023-12-01 14:20:36.662 +05:30 [INF] Test passed for SignUp 

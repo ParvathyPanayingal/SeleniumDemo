@@ -30,7 +30,7 @@ namespace AJIO.Testscripts
 
             AjioHomePage ajio = new(driver);
             ajio.AjioLogoClick();
-            Thread.Sleep(2000);
+            //Thread.Sleep(2000);
             TakeScreenShot();
             Log.Information("Page reloaded");
             try
@@ -70,8 +70,7 @@ namespace AJIO.Testscripts
             {
                 driver.Navigate().GoToUrl("https://www.ajio.com/");
 
-            }
-            
+            }          
 
             AjioHomePage ajioHomePage = new(driver);
             Log.Information("Buy Product Test Started");
@@ -86,7 +85,7 @@ namespace AJIO.Testscripts
             fluentWait.Message = "Element not found.";
 
             fluentWait.Until(d => driver.Url.Equals("https://www.ajio.com/selfcare"));
-            Thread.Sleep(2000);
+            //Thread.Sleep(2000);
 
             string? excelFilePath = currdir + "/TestData/InputData.xlsx";
             string? sheetName = "CustomerCareInput";
@@ -100,9 +99,9 @@ namespace AJIO.Testscripts
                 customerCarePage.ClickSearchInput(searchQuery);
                 TakeScreenShot();
                 Log.Information("Searched for return");
-                Thread.Sleep(3000);
+                //Thread.Sleep(3000);
                 customerCarePage.SelectQuestion();
-                Thread.Sleep(3000);
+                //Thread.Sleep(3000);
 
                 
                  try
@@ -156,7 +155,7 @@ namespace AJIO.Testscripts
             TakeScreenShot();
             Log.Information("Modal Opened");
             ajio.ClickShopWomen();
-            Thread.Sleep(3000);
+            //Thread.Sleep(3000);
             DefaultWait<IWebDriver> fluentWait = new DefaultWait<IWebDriver>(driver);
             fluentWait.Timeout = TimeSpan.FromSeconds(5);
             fluentWait.PollingInterval = TimeSpan.FromMilliseconds(50);
@@ -207,7 +206,7 @@ namespace AJIO.Testscripts
 
             AjioHomePage ajio = new(driver);
             ajio.ClickReturnRefund();
-            Thread.Sleep(2000);
+            //Thread.Sleep(2000);
             TakeScreenShot();
             Log.Information("Page displays return and refund policy");
             try
@@ -252,7 +251,7 @@ namespace AJIO.Testscripts
 
             AjioHomePage ajio = new(driver);
             ajio.ClickSignUp();
-            Thread.Sleep(2000);
+            //Thread.Sleep(2000);
             TakeScreenShot();
             Log.Information("SignUp modal displayed");
 
@@ -268,13 +267,13 @@ namespace AJIO.Testscripts
                 string? email = excelData?.Email;
                 ajio.ClickMobileNoInput(mobileNumber);
                 ajio.ClickContinueButton();
-                Thread.Sleep(2000);
+                //Thread.Sleep(2000);
                 ajio.ClickGenderRadio();
                 ajio.ClickNameInputBox(name);
                 ajio.ClickEmailInputBox(email);
                 ajio.ClickSendOtpButton();
                 ajio.SelectCheckBox();
-                Thread.Sleep(3000);
+                //Thread.Sleep(3000);
                 try
                 {
 

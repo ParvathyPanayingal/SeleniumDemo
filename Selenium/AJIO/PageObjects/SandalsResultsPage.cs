@@ -1,4 +1,5 @@
 ﻿using OpenQA.Selenium;
+using OpenQA.Selenium.Support.UI;
 using SeleniumExtras.PageObjects;
 using System;
 using System.Collections.Generic;
@@ -11,6 +12,16 @@ namespace AJIO.PageObjects
     internal class SandalsResultsPage
     {
         IWebDriver driver;
+        private DefaultWait<IWebDriver> fluentWait()
+        {
+            DefaultWait<IWebDriver> fluentWait = new DefaultWait<IWebDriver>(driver);
+            fluentWait.Timeout = TimeSpan.FromSeconds(5);
+            fluentWait.PollingInterval = TimeSpan.FromMilliseconds(50);
+            fluentWait.IgnoreExceptionTypes(typeof(NoSuchElementException));
+            fluentWait.Message = "Element not found.";
+            return fluentWait;
+        }
+
         public SandalsResultsPage(IWebDriver? driver)
         {
             this.driver = driver ?? throw new ArgumentNullException(nameof(driver));
@@ -41,9 +52,9 @@ namespace AJIO.PageObjects
 
         public ProductDetailsPage ProductClick()
         {
-            //CoreCodes.ScrollIntoView(driver, Product);
-            Product.Click();
-            Thread.Sleep(3000);
+            //fluentWait().Until(d => (Product?.Displayed));
+            Product?.Click();
+            //Thread.Sleep(3000);
             return new ProductDetailsPage(driver);
         }
     }

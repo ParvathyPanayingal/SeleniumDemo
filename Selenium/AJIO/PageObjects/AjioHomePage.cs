@@ -91,7 +91,7 @@ namespace AJIO.PageObjects
 
         public AjioCareersPage ClickJoinOurTeam()
         {
-            JoinOurTeam.Click();
+            JoinOurTeam?.Click();
             return new AjioCareersPage(driver);
         }
 
@@ -139,12 +139,12 @@ namespace AJIO.PageObjects
 
         public void ClickNameInputBox(string Name)
         {
-            NameInputBox.SendKeys(Name);
+            NameInputBox?.SendKeys(Name);
         }
 
         public void ClickEmailInputBox(string Email)
         {
-            EmailINputBox.SendKeys(Email);
+            EmailINputBox?.SendKeys(Email);
         }
 
         public void ClickSendOtpButton()

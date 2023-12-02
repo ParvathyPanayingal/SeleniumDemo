@@ -1,3 +1,0 @@
-2023-12-01 16:15:14.582 +05:30 [INF] Navigated to AJIO Career page 
-2023-12-01 16:15:35.023 +05:30 [INF] Navigated to Registration form page 
-2023-12-01 16:15:40.726 +05:30 [INF] Test passed for AJIO Career Test

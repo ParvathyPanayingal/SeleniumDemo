@@ -1,2 +1,0 @@
-2023-12-01 15:26:48.245 +05:30 [INF] Modal Opened
-2023-12-01 15:26:54.612 +05:30 [INF] Test passed for Float Button

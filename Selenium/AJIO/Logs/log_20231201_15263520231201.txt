@@ -1,4 +1,0 @@
-2023-12-01 15:26:35.704 +05:30 [INF] Buy Product Test Started
-2023-12-01 15:26:37.234 +05:30 [INF] Navigated to Customer Care Page
-2023-12-01 15:26:39.716 +05:30 [INF] Searched for return
-2023-12-01 15:26:45.892 +05:30 [INF] Test passed for Customer Care

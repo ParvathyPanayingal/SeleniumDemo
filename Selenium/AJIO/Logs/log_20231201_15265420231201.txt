@@ -1,7 +1,0 @@
-2023-12-01 15:26:59.715 +05:30 [INF] Page displays return and refund policy
-2023-12-01 15:26:59.795 +05:30 [ERR] Test failed for Return and refund policy. 
- Exception:   Expected string length 41 but was 31. Strings differ at index 21.
-  Expected: "https://www.ajio.com/return-refund-policy"
-  But was:  "https://www.ajio.com/shop/women"
-  --------------------------------^
-
